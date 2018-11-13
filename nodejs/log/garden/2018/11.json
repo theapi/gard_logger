@@ -1,0 +1,2 @@
+{"msg_type":50,"device_id":1,"msg_id":140,"vcc":4128,"mv":544,"ma":0,"light":0,"cpu_temperature":13,"temperature":93,"rssi":-88,"snr":5,"freg_error":9495,"timestamp":1542139370083}
+{"msg_type":50,"device_id":1,"msg_id":141,"vcc":4128,"mv":544,"ma":0,"light":0,"cpu_temperature":12,"temperature":93,"rssi":-93,"snr":4,"freg_error":9428,"timestamp":1542139419805}
