@@ -7,6 +7,7 @@ const FileLogger = require('./FileLogger.js');
 const ElasticsearchLogger = require('./ElasticsearchLogger.js');
 const SolarPayloadHandler = require('./SolarPayloadHandler.js');
 const GardenPayloadHandler = require('./GardenPayloadHandler.js');
+const GardPayloadHandler = require('./GardPayloadHandler.js');
 const esClient = require('./elasticsearch/connection.js');
 
 // Connect to the UDP service.
@@ -35,11 +36,20 @@ new GardenPayloadHandler(
   ]
 );
 
-new SolarPayloadHandler(
+// new SolarPayloadHandler(
+//   udpSocket,
+//   [ // The loggers for the handler to use.
+//     console,
+//     new FileLogger('solar'),
+//     new ElasticsearchLogger(esClient, esConfig.solar.index)
+//   ]
+// );
+
+new GardPayloadHandler(
   udpSocket,
   [ // The loggers for the handler to use.
     console,
-    new FileLogger('solar'),
-    new ElasticsearchLogger(esClient, esConfig.solar.index)
+    new FileLogger('gard'),
+    new ElasticsearchLogger(esClient, esConfig.gard.index)
   ]
-);
+).run();

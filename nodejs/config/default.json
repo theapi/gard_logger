@@ -12,6 +12,9 @@
     },
     "solar": {
       "index": "solar_0"
+    },
+    "gard": {
+      "index": "gard"
     }
   }
 }

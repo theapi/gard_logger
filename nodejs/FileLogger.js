@@ -17,7 +17,7 @@ module.exports = class FileLogger {
     .then(() => {
       return fsPromises.appendFile(
         dir + '/' + month + '.json',
-        JSON.stringify(payload) + "\n"
+        JSON.stringify(payload) + ",\n"
       );
     })
     .catch(console.error);
