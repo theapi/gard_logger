@@ -19,13 +19,15 @@ module.exports = class GardPayloadHandler extends PayloadHandler {
     // bit 1 = water
     // bit 2 = temperature
     // bit 3 = battery
+    // bit 7 = activated
 
     payload.flag_switch = this.bitRead(payload.flags, 0) ? true : false;
     payload.flag_water = this.bitRead(payload.flags, 1) ? true : false;
     payload.flag_temperature = this.bitRead(payload.flags, 2) ? true : false;
     payload.flag_battery = this.bitRead(payload.flags, 3) ? true : false;
+    payload.flag_activated = this.bitRead(payload.flags, 7) ? true : false;
 
-    // Remove unsued values.
+    // Remove unused values.
     delete payload.mv;
     delete payload.light;
     delete payload.temperature;

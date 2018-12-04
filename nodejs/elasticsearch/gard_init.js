@@ -15,6 +15,9 @@ client.indices.create({
           "device_id": {
             "type": "short"
           },
+          "flag_activated": {
+            "type": "boolean"
+          },
           "flag_battery": {
             "type": "boolean"
           },
