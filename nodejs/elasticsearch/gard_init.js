@@ -45,6 +45,9 @@ client.indices.create({
           "msg_type": {
             "type": "short"
           },
+          "mv": {
+            "type": "short"
+          },
           "rssi": {
             "type": "short"
           },

@@ -28,7 +28,7 @@ module.exports = class GardPayloadHandler extends PayloadHandler {
     payload.flag_activated = this.bitRead(payload.flags, 7) ? true : false;
 
     // Remove unused values.
-    delete payload.mv;
+    //delete payload.mv;
     delete payload.light;
     delete payload.temperature;
 
