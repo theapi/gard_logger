@@ -43,26 +43,6 @@ module.exports = class PayloadHandler {
     return payload;
   }
 
-  unserialize(buf) {
-    let payload = {};
-    payload.msg_type = buf.readUInt8(0);
-    payload.device_id = buf.readUInt8(1);
-    payload.msg_id = buf.readUInt8(2);
-    payload.flags = buf.readUInt8(3);
-    payload.vcc = buf.readInt16BE(4);
-    payload.mv = buf.readInt16BE(6);
-    payload.ma = buf.readInt16BE(8);
-    payload.light = buf.readInt16BE(10);
-    payload.cpu_temperature = buf.readInt16BE(12);
-    payload.temperature = buf.readInt16BE(14) / 10;
-    payload.rssi = buf.readInt16BE(16);
-    payload.snr = buf.readInt16BE(18);
-    payload.freg_error = buf.readInt16BE(20);
-
-    return payload;
-  }
-
-
   bitRead(value, bit) {
     return ((value >> bit) & 0x01);
   }

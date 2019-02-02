@@ -11,6 +11,26 @@ module.exports = class GardPayloadHandler extends PayloadHandler {
     this.device_id = 2;
   }
 
+  unserialize(buf) {
+    let payload = {};
+    payload.msg_type = buf.readUInt8(0);
+    payload.device_id = buf.readUInt8(1);
+    payload.msg_id = buf.readUInt8(2);
+    this.msg_id = payload.msg_id;
+    payload.flags = buf.readUInt8(3);
+    payload.battery = buf.readInt16BE(4);
+    payload.mv = buf.readInt16BE(6);
+    payload.ma = buf.readInt16BE(8);
+    payload.light = buf.readInt16BE(10);
+    payload.cpu_temperature = buf.readInt16BE(12);
+    payload.temperature = buf.readInt16BE(14) / 10;
+    payload.rssi = buf.readInt16BE(16);
+    payload.snr = buf.readInt16BE(18);
+    payload.freg_error = buf.readInt16BE(20);
+
+    return payload;
+  }
+
   processPayload(payload) {
     payload = super.processPayload(payload);
 
@@ -33,4 +53,5 @@ module.exports = class GardPayloadHandler extends PayloadHandler {
 
     return payload;
   }
+
 }
