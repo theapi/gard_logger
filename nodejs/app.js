@@ -27,14 +27,14 @@ udpSocket.on("listening", function() {
 
 // Start the payload handlers.
 const esConfig = config.get('elasticsearch');
-// new GardenPayloadHandler(
-//   udpSocket,
-//   [ // The loggers for the handler to use.
-//     console,
-//     new FileLogger('garden'),
-//     new ElasticsearchLogger(esClient, esConfig.garden.index)
-//   ]
-// );
+new GardenPayloadHandler(
+  udpSocket,
+  [ // The loggers for the handler to use.
+    console,
+    new FileLogger('garden'),
+    new ElasticsearchLogger(esClient, esConfig.garden.index)
+  ]
+);
 
 // new SolarPayloadHandler(
 //   udpSocket,
