@@ -30,7 +30,6 @@ module.exports = class GardPayloadHandler extends PayloadHandler {
     // Remove unused values.
     //delete payload.mv;
     delete payload.light;
-    delete payload.temperature;
 
     return payload;
   }

@@ -54,10 +54,13 @@ client.indices.create({
           "snr": {
             "type": "short"
           },
+          "temperature": {
+            "type": "float"
+          },
           "timestamp": {
             "type": "date"
           },
-          "vcc": {
+          "battery": {
             "type": "short"
           }
         }
