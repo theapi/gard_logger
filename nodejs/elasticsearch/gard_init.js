@@ -21,7 +21,10 @@ client.indices.create({
           "flag_battery": {
             "type": "boolean"
           },
-          "flag_switch": {
+          "flag_door": {
+            "type": "boolean"
+          },
+          "flag_motion": {
             "type": "boolean"
           },
           "flag_temperature": {
