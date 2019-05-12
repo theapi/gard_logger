@@ -15,6 +15,9 @@
     },
     "gard": {
       "index": "gard"
+    },
+    "gard_light": {
+      "index": "gard_light"
     }
   }
 }
