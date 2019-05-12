@@ -8,7 +8,7 @@ const ElasticsearchLogger = require('./ElasticsearchLogger.js');
 const SolarPayloadHandler = require('./SolarPayloadHandler.js');
 const GardenPayloadHandler = require('./GardenPayloadHandler.js');
 const GardPayloadHandler = require('./GardPayloadHandler.js');
-const GardPayloadHandler = require('./GardLightPayloadHandler.js');
+const GardLightPayloadHandler = require('./GardLightPayloadHandler.js');
 const esClient = require('./elasticsearch/connection.js');
 
 // Connect to the UDP service.
